@@ -1,6 +1,12 @@
 import { noteModel } from "../../../databases/models/note.model.js"
 
 
+const allNotes = async(req,res)=>{
+    let notes = await noteModel.find().populate('createdBy','name -_id')
+    res.json({message:'success',notes})
+
+}
+
 const addNote = async(req,res)=>{
     await noteModel.insertMany(req.body)
     res.json({message:'success'})
@@ -21,5 +27,6 @@ const deleteNote = async(req,res)=>{
 export{
     addNote,
     updateNote,
-    deleteNote
+    deleteNote,
+    allNotes
 }
