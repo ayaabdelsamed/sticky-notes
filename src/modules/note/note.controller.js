@@ -12,7 +12,14 @@ const updateNote = async(req,res)=>{
     res.json({message:'success',user})
 }
 
+const deleteNote = async(req,res)=>{
+    let note= await noteModel.findByIdAndDelete(req.params.id)
+    if(!note) return res.json({message:"note not found"})
+    res.json({message:'success',note})
+}
+
 export{
     addNote,
     updateNote,
+    deleteNote
 }
