@@ -2,14 +2,9 @@ import { noteModel } from "../../../databases/models/note.model.js"
 import jwt from 'jsonwebtoken'
 
 const allNotes = async(req,res)=>{
-    let token = req.header('token')
-    jwt.verify(token,'myNameIsAya',async(err,decoded)=>{
-        if(err) return res.json({message:'err',err})
-            else{
-            let notes = await noteModel.find().populate('createdBy','name -_id')
-            res.json({message:'success',notes})
-        }
-    })
+    
+        let notes = await noteModel.find().populate('createdBy','name -_id')
+        res.json({message:'success',notes})
 }
 
 const addNote = async(req,res)=>{

@@ -9,8 +9,7 @@ const signup= async(req,res)=>{
 }
 
 const signin= async(req,res)=>{
-    let user = await userModel.findOne({email:req.body.email})
-
+    const user = await userModel.findOne({email:req.body.email})
     if(user&&bcrypt.compareSync(req.body.password,user.password)){
         let token = jwt.sign({userID:user._id,role:user.role},'myNameIsAya')
         return res.json({message:"success",token})
