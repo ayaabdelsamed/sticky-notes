@@ -1,1 +1,1 @@
-# sticky-notes using mongodb
+# sticky-notes using mongodb with Node.js
