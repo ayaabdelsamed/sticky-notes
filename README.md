@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sticky Notes
 
 ## Description
@@ -15,3 +16,6 @@ Sticky Notes is a web application that allows users to create, edit, and manage 
 - Node.js
 - Express
 - HTML, CSS, JavaScript
+=======
+# sticky-notes using mongodb with Node.js
+>>>>>>> 1c46ea545bf88b158a0356919ecca164036190a7
